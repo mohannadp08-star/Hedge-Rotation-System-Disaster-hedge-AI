@@ -156,3 +156,54 @@ pandas
 This project does not trade an asset…
 
 It trades the market condition, similar to professional hedge fund systems
+
+
+🇸🇦 الشرح بالعربي
+
+عند تشغيل النظام في Streamlit ستظهر لك رسالة مثل:
+
+Current Mode: GOLD
+GOLD Signal → Price: Ticker GC=F 5410.799805 Name: 2026-01-29 21:55:00+00:00, dtype: float64
+
+ماذا يعني هذا؟
+
+Current Mode: GOLD
+يعني أن نظام الذكاء الاصطناعي قام بتحليل حركة الذهب ولم يكتشف أي إشارات انهيار قوية، لذلك ما زال يعمل في وضع تحليل الذهب.
+
+GOLD Signal → Price
+هذا هو آخر سعر مباشر للذهب تم جلبه من Yahoo Finance.
+
+Ticker GC=F
+هو رمز عقد الذهب الآجل في Yahoo Finance.
+
+التاريخ والوقت
+هو وقت آخر شمعة (15 دقيقة) تم تحليلها.
+
+dtype: float64
+هذا ليس جزءًا مهمًا للمستخدم — بل ناتج تقني من Pandas لأننا نعرض السلسلة بدل القيمة فقط.
+
+
+
+🇬🇧 English Explanation
+
+When you run the system on Streamlit, you may see an output like:
+
+Current Mode: GOLD
+GOLD Signal → Price: Ticker GC=F 5410.799805 Name: 2026-01-29 21:55:00+00:00, dtype: float64
+
+What does this mean?
+
+Current Mode: GOLD
+The AI system analyzed gold price action and did NOT detect crash conditions, so it remains in GOLD analysis mode.
+
+GOLD Signal → Price
+This is the latest live gold price fetched from Yahoo Finance.
+
+Ticker GC=F
+This is the Yahoo Finance symbol for Gold Futures.
+
+Timestamp
+The time of the last 15-minute candle analyzed.
+
+dtype: float64
+This is a technical Pandas output and not relevant to the end user. It appears because the code is printing a Series instead of a single numeric value.
